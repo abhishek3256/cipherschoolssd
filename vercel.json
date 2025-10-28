@@ -2,7 +2,11 @@
   "version": 2,
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
+  "outputDirectory": "dist",
   "routes": [
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+    { "src": "/favicon.ico", "dest": "/favicon.ico" },
+    { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/api/projects/(?<id>[^/]+)", "dest": "/api/projects_[id].js" },
     { "src": "/api/projects", "dest": "/api/projects.js" },
     { "src": "^(?!/api).*", "dest": "/index.html" }
